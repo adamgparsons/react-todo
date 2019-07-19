@@ -16,7 +16,7 @@ const ListItem = ({ todo }) => {
           checked={done ? true : false}
         />
       </div>
-      <div className={done ? "mh2 gray strike" : "mh2"}>{todo}</div>
+      <div className={done ? "mh2 pl3 gray strike" : "mh2 pl3"}>{todo}</div>
     </div>
   );
 };
