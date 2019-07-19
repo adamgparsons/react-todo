@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  background-color: #96ccff;
+}
+
+@media screen and (min-width: 30em) {
+  body {
+    padding: 0;
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
