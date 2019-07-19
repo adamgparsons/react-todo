@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 
-const AddTodo = () => {
+const AddTodo = ({ saveTodo }) => {
   // set up the state variable(value) and the state function(setValue)
   // the initial value is blank useState("")
   const [value, setValue] = useState("");
-
   return (
     <form
       // on submission of the form, run an event that:
@@ -14,14 +13,16 @@ const AddTodo = () => {
       onSubmit={event => {
         event.preventDefault();
         console.log(value);
+        // push todo up to object in app called saveTodo
+        saveTodo(value);
         // resets value
         setValue("");
       }}
     >
-      <div className="pv1 flex items-center br2">
+      <div className="ba b--gray flex items-center br2">
         <div className="flex items-center">
           <svg
-            className="pl2"
+            className="pl3"
             width="16"
             height="16"
             viewBox="0 0 16 16"
@@ -40,14 +41,16 @@ const AddTodo = () => {
           <input
             type="text"
             placeholder="Add new todo"
-            className="bn mh3 pv2 b black pointer w-100 pl1"
+            onFocus={e => (e.target.placeholder = "")}
+            onBlur={e => (e.target.placeholder = "Add new todo")}
+            className="bn mh3 pv3 b black pointer w-100 pl1 outline-0"
             //every time this input changes (some enters or removes characters)
             // Use the setValue function(that updates value) to equal the target(input) value
             onChange={event => {
               setValue(event.target.value);
             }}
-            value={value}
             // make the inputs value equal the value(variable)
+            value={value}
           />
         </div>
       </div>
